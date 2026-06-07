@@ -183,7 +183,7 @@ This ensemble leveraged differences in architecture and training history to lear
 | EfficientNet B6 (1024×1024, 30 epochs + 1280×1280, 15 epochs + 1356×1356, 10 epochs)                       | 0.84987      | 0.82945       | 26 (Silver)    |
 | EfficientNet B7 (1280×1280, 44 epochs, fine-tuned)                                                         | 0.85034      | 0.82979       | 26 (Silver)    |
 | EfficientNet B6 (1024×1024, 30 epochs + 1280×1280, 15 epochs)                                              | 0.85019      | 0.82991       | 26 (Silver)    |
-| **EfficientNet B6 (1024×1024, 30 epochs + 1280×1280, 15 epochs) + EfficientNet B7 (1280×1280, 30 epochs)** | **0.88145**  | **0.85661**   |  **10 Gold**   |
+| **EfficientNet B6 (1024×1024, 30 epochs + 1280×1280, 15 epochs) + EfficientNet B7 (1280×1280, 30 epochs)** | **0.88145**  | **0.85661**   | **10 (Gold)**  |
 
 ### Best Result
 
