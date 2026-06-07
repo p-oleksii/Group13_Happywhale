@@ -1,0 +1,22 @@
+# Used for training a standalone model B7_ft (1280 x 1280, 44 epochs)
+batch_size: 6
+image_size:
+- 1280
+- 1280
+max_epochs: 44
+model_name: tf_efficientnet_b7_ns
+out_indices:
+- 3
+- 4
+n_splits: -1
+pseudo_label: pseudo_labels/round2.csv
+pseudo_conf_threshold: 0.65
+
+lr_backbone: 1.82e-3
+lr_head: 1.82e-2
+
+bboxes:
+  fullbody_charm: 0.17
+  fullbody: 0.62
+  backfin: 0.16
+  none: 0.05

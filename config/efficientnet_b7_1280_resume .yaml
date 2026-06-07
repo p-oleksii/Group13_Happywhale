@@ -1,0 +1,16 @@
+# Used to resume training after the B7_ft (1024 x 1024, 30 epochs)
+batch_size: 4
+image_size:
+- 1280
+- 1280
+max_epochs: 10
+model_name: tf_efficientnet_b7_ns
+out_indices:
+- 3
+- 4
+n_splits: -1
+pseudo_label: pseudo_labels/round2.csv
+pseudo_conf_threshold: 0.6
+
+lr_backbone: 2.8e-5
+lr_head: 2.22e-4
