@@ -1,6 +1,14 @@
-# Group13 Happywhale Final Project
+# Group13_Happywhale - Whale and Dolphin Identification_111550202
 
-<img width="948" height="784" alt="image" src="https://github.com/user-attachments/assets/adb7d5e5-d961-4dcd-b11f-d0a63ffcfb48" />
+* Ruy Calderon (313540041)
+* Kanika (314540012)
+* Oleksii Palamarchuk (111550202)
+* 簡惟捷 (110654013)
+
+<img width="330" height="184" alt="image" src="https://github.com/user-attachments/assets/adb7d5e5-d961-4dcd-b11f-d0a63ffcfb48" />
+<img width="330" height="184" alt="image" src="https://github.com/user-attachments/assets/86415e30-11e9-4876-b743-b9d4226c6c82" />
+<img width="330" height="184" alt="image" src="https://github.com/user-attachments/assets/28cafe92-8381-4f86-957c-079066bdd766" />
+
 
 ## Introduction
 
@@ -8,7 +16,42 @@ Tracking individual whales and dolphins is essential for ecological and conserva
 
 This project explores deep learning approaches for whale and dolphin identification using image-based recognition. By focusing on distinguishing individual animals within a small set of cetacean species, the goal is to develop an accurate and scalable solution that can support wildlife monitoring, behavioral studies, and conservation efforts.
 
-## Related Work
+## Environment Setup
+
+All experiments were conducted using Google Colab with a G4 GPU (NVIDIA RTX PRO 6000 Blackwell), totaling approximately **300 GPU-hours** of training and experimentation.
+
+To reproduce the results, first obtain the repository files by either cloning or downloading the ZIP:
+
+```bash
+git clone https://github.com/p-oleksii/Group13_Happywhale.git
+```
+
+Alternatively, you can download the repository manually via the GitHub “Download ZIP” option.
+
+After obtaining the project files, open Google Colab (https://colab.research.google.com/) and load the provided `Group13_Happywhale - Whale and Dolphin Identification_111550202.ipynb` notebook from the repository.
+
+
+## Usage
+
+### Package Installation, Training, Inference, Ensemble
+
+To run the full pipeline:
+
+1. Open the provided `Group13_Happywhale - Whale and Dolphin Identification_111550202.ipynb` notebook file in Google Colab.
+2. Follow and execute all cells sequentially from top to bottom.
+3. Carefully follow the instructions included in the notebook.
+
+The notebook fully automates the workflow, including:
+- Data preprocessing  
+- Model training  
+- Evaluation  
+- Inference
+- Ensemble
+
+Once executed in order, all steps will run automatically without additional manual intervention.
+
+
+## Related Works
 
 This project builds upon prior research in species classification, cetacean identification, and deep metric learning. Several key works influenced the design of our approach.
 
@@ -29,7 +72,7 @@ Our implementation is primarily inspired by the winning solution of the Kaggle H
 
 Together, these techniques have demonstrated state-of-the-art performance in both facial recognition and fine-grained image identification tasks, making them well-suited for whale and dolphin individual recognition.
 
-## Methods
+## Method / Approach
 
 ### Project Overview
 
@@ -83,7 +126,7 @@ Multiple EfficientNet configurations were evaluated using image resolutions rang
 During inference, predictions from several high-performing models were combined using an **ensemble approach**, improving robustness and overall identification accuracy compared to any single model.
 
 
-## Results
+## Experimental Results
 
 All experiments were conducted using Google Colab G4 GPUs, with approximately **300 GPU-hours** of total training and evaluation. Performance was measured using both validation accuracy and Kaggle submission scores.
 
@@ -108,8 +151,8 @@ Several ensemble configurations were evaluated. Combining strong and weak models
 
 The best ensemble consisted of:
 
-* EfficientNet-B6 (1024×1024 → 1280×1280 fine-tuned)
-* EfficientNet-B7 (1280×1280)
+* EfficientNet-B6 (1024×1024, 30 epochs + 1280×1280, 15 epochs, fine-tuning)
+* EfficientNet-B7 (1280×1280, 44 epochs, fine-tuned)
 
 This ensemble leveraged differences in architecture and training history to learn complementary feature representations and produced the strongest overall Kaggle submission.
 
@@ -175,7 +218,7 @@ A major limiting factor throughout the project was **compute constraints**, whic
 
 ### Importance of Preprocessing
 
-Dataset preprocessing—particularly the YOLO-based segmentation pipeline—had a substantial impact on overall performance. This suggests that **early-stage errors in segmentation propagate and are amplified downstream**, limiting the effectiveness of architectural improvements.
+Dataset preprocessing-particularly the YOLO-based segmentation pipeline-had a substantial impact on overall performance. This suggests that **early-stage errors in segmentation propagate and are amplified downstream**, limiting the effectiveness of architectural improvements.
 
 In contrast, modifications to the model architecture itself produced relatively small performance changes, indicating that the chosen EfficientNet + ArcFace pipeline was already well-optimized for this task.
 
@@ -198,3 +241,31 @@ Several promising directions for further improvement were identified:
 ### Final Remarks
 
 Overall, we consider the project to be successful, achieving a **Gold medal-level performance** in the HappyWhale Kaggle competition. The results demonstrate that careful preprocessing, resolution scheduling, and ensembling strategies are more impactful than large architectural changes in this problem setting.
+
+## Contributions
+
+| Task                                  | 111550202 | 313540041 | 314540012 | 110654013 |
+| ------------------------------------- | --------- | --------- | --------- | --------- |
+| Literature survey                     | 30        | 10        | 30        | 30        |
+| Approach design                       | 30        | 10        | 30        | 30        |
+| Approach implementation (experiment)  | 70        | 0         | 10        | 20        |
+| Report writing                        | 25        | 65        | 5         | 5         |
+| Slide making and oral presentation    | 10        | 70        | 10        | 10        |
+
+
+## Reference
+
+(1) Tan, M., & Le, Q. V. (2019). EfficientNet: Rethinking model scaling for convolutional neural networks. Proceedings of the 36th International Conference on Machine Learning (ICML). arXiv:1905.11946. 
+
+(2) Deng, J., Guo, J., Yang, J., Xue, N., Kotsia, I., & Zafeiriou, S. (2022). ArcFace: Additive angular margin loss for deep face recognition. arXiv:1801.07698. Related TPAMI DOI: 10.1109/TPAMI.2021.3087709.
+
+(3) Ted Cheeseman, Ken Southerland, Walter Reade, and Addison Howard. Happywhale - Whale and Dolphin Identification. https://kaggle.com/competitions/happy-whale-and-dolphin, 2022. Kaggle.
+
+(4) Karczmarski, L., Chan, S. C. Y., Rubenstein, D. I., et al. (2022). Individual identification and photographic techniques in mammalian ecological and behavioural research-Part 1: Methods and concepts. Mammalian Biology, 102, 545–549.
+
+(5) Trotter, C., Wright, N., McGough, A. S., Sharpe, M., Cheney, B., Arso Civil, M., Moore, R. T., Allen, J., & Berggren, P. (2022). Towards Automatic Cetacean Photo-Identification: A Framework for Fine-Grain, Few-Shot Learning in Marine Ecology. arXiv:2212.03646.
+
+(6) Norouzzadeh, M. S., Nguyen, A., Kosmala, M., Swanson, A., Palmer, M. S., Packer, C., & Clune, J. (2018). Automatically identifying, counting, and describing wild animals in camera-trap images with deep learning. Proceedings of the National Academy of Sciences, 115(25), E5716–E5725.
+
+(7) Preferred Dolphin. (2022, May 24). 1st Place Solution. Kaggle: Happywhale - Whale and Dolphin Identification. Retrieved May 26, 2026, from Kaggle.
+
